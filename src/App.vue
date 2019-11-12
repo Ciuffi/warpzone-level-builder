@@ -27,7 +27,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import VueCompositionApi from '@vue/composition-api';
-import HelloWorld from './components/HelloWorld.vue';
 import Grid from './components/Grid.vue';
 
 enum Mode {
