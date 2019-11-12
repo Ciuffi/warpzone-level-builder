@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div class="instructions">
+    <div style="margin-bottom: 1%;" class="title"> Warpzone Level Builder</div>
+        <div class="instructions">
       Left click to create blocks
       <br>
       Right click to delete blocks
@@ -13,8 +14,7 @@
       <a href="https://ciuffi.dev" target="_blank" rel="noopener"> Ciuffi.dev
       </a>
     </div>
-    <div style="margin-bottom: 1%;" class="title"> Warpzone Level Builder</div>
-    <div style="width: 35%; margin: 0.2% auto; display: flex;">
+    <div class="buttons">
       <button class="button is-info is-light" @click="upload">📁 Import</button>
       <button class="button is-success is-light" @click="save">💾 Save</button>
       <button class="button is-danger is-light" @click="clear">❌ Clear</button>
@@ -100,4 +100,26 @@ export default Vue.extend({
   font-weight: bold;
   font-size: 1.8em;
 }
+.buttons {
+  width: 35%;
+  margin: 0.2% auto;
+  display: flex;
+}
+@include until($tablet){
+  .instructions {
+    top: none;
+    left: none;
+    position: relative;
+    font-size: 1em;
+  }
+  .credits {
+    top: none;
+    left: none;
+    position: relative;
+    font-size: 1em;
+  }
+  .buttons {
+    width: 100%;
+  }
+ }
 </style>
