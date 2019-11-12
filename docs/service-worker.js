@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.cbe6a3ed21b10fb46251a91c9c81737d.js"
+  "/precache-manifest.551efd57180659422ddd2306e5bbdd93.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "warpzone-level-builder"});
