@@ -33,10 +33,10 @@ export default Vue.extend({
   },
   methods: {
     click(event: MouseEvent) {
-      this.clicked(event, this.row, this.col);
+      this.clicked(event.button, this.row, this.col);
     },
     dragged(event: MouseEvent) {
-      this.drag(event, this.row, this.col);
+      this.drag(event.button, this.row, this.col);
     },
   },
   computed: {

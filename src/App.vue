@@ -106,6 +106,9 @@ export default Vue.extend({
   display: flex;
 }
 @include until($tablet){
+  #app {
+      overflow-y: visible;
+  }
   .instructions {
     top: none;
     left: none;

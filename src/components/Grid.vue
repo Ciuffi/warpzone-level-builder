@@ -12,7 +12,6 @@
 </template>
 
 <script lang="ts">
-/* eslint no-restricted-globals:0 */
 import Vue from 'vue';
 import Square from './Square.vue';
 
@@ -37,17 +36,21 @@ export default Vue.extend({
     },
     mouseUp() {
       this.mouseDown = false;
+      this.button = -1;
       localStorage.setItem('grid', JSON.stringify(this.grid));
     },
-    clicked(event: MouseEvent, x: number, y: number) {
+    clicked(button: number, x: number, y: number) {
       if (unTouchable(x)) return;
+      if (this.button === -1) {
+        this.button = button;
+      }
       const newGrid = [...this.grid[x]];
-      newGrid[y] = event.button === 0 ? 1 : 0;
+      newGrid[y] = button === 0 ? 1 : 0;
       this.grid.splice(x, 1, newGrid);
     },
-    drag(event: MouseEvent, x: number, y: number) {
+    drag(button: number, x: number, y: number) {
       if (!this.mouseDown) return;
-      this.clicked(event, x, y);
+      this.clicked(this.button, x, y);
     },
   },
   data() {
@@ -55,6 +58,7 @@ export default Vue.extend({
     return {
       grid,
       mouseDown: false,
+      button: -1,
     };
   },
   mounted() {
